@@ -1,1 +1,15 @@
 Réflexions sur les commandes de log (à tester dans le code complet/semi-complet)
+
+-à appeler après chaque exécution d'une commande (dans le bloc conditionnel)
+
+-récupérer date d'exécution de la commande -> besoin de time.h (commande ctime permet de récupérer chaîne lisible)
+format avec ctime : Jou Moi JJ HH:MM:SS AAAA
+ou utiliser strftime pour choisir soi-même format
+
+-récupérer texte utilisateur -> déjà récupéré, donc ça devrait aller
+
+-récupérer type commande -> tableaux pour commandes internes et externes, écrire "INTERNE" ou "EXTERNE" selon commande exécutée
+
+-récupérer code de retour -> ??
+
+-écrire dans log.txt -> ne pas écrire par dessus lignes existantes -> ouvrir en mode append (option "a")

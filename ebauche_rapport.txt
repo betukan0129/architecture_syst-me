@@ -1,1 +1,13 @@
 Ebauche du rapport (sera fait sur Word une fois toutes les infos obtenues)
+
+-Objectif : créer un programme imitant un interpréteur de commande
+-Contraintes : écrire le programme uniquement en C
+-Membres de l'équipe (et qui fait quoi ?)
+-Mode de travail : utilisation de GitHub pour mettre travaux individuels en commun
+
+-Parler du dev
+-Découpage des commandes utilisateur -> utilisation de strtok et getline (scanf récupère seulement un mot à la fois)
+-Programme devant fonctionner jusqu'à demande de fin par utilisateur -> boucle while infinie pour exécution
+
+-Conclusion
+
