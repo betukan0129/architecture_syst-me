@@ -13,3 +13,6 @@ void decouper(char* ligne, char** argv, int* nb_mots);
 
 void executer_exit(char* argv);
 void ecrire_log(char* argv, char* type, int code_retour);
+void executer_pwd(char* path, char** argv, int* argc);
+void commande_introuvable(char* ligne, int code_retour);
+void executer_echo(char** argv, int* argc);
