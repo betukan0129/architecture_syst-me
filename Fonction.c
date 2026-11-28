@@ -17,12 +17,44 @@ void decouper(char* ligne, char** argv, int* nb_mots) {
         (*nb_mots)++;
         mot = strtok(NULL, " \n");
     }
+    argv[(*nb_mots) +1] = NULL;  
+    
 }
 void ecrire_log(char* argv, char* type, int code_retour){
     char* date = "rien pour le moment";
-    FILE* fp = fopen("log.txt", "a");
-    fprintf(fp, "\n %s - %s - %s - %d\n", date, argv, type, 0);
+    FILE* fp = fopen("fichier_log.txt", "a");
+    fprintf(fp, "%s - %s - %s - %d\n", date, argv, type, code_retour);
     fclose(fp);
 
 
+}
+void executer_pwd(char* path, char** argv, int* argc){
+    if (*argc > 1) {
+        printf("pwd: option(s) ignorée(s)\n");
+        ecrire_log("pwd", "commande interne", 0);
+    }
+    
+    if (getcwd(path, 1024) != NULL) {
+        printf("%s\n", path);
+        ecrire_log("pwd", "commande interne", 1);
+    } else {
+        perror("pwd");
+        ecrire_log("pwd", "commande interne", 0);
+    }
+    
+    
+    
+
+}
+void commande_introuvable(char* ligne,int code_retour){
+    ecrire_log(ligne, "Ce n'est pas une commande",0);
+    printf("Commande introuvable \n");
+
+}
+
+void executer_echo(char** argv, int* argc){
+    for(int i = 1 ; i < *argc ; i++){
+        printf("%s ", argv[i]);
+    }
+    printf("\n");
 }
