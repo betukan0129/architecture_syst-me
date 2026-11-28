@@ -10,11 +10,19 @@
 
 void decouper(char* ligne, char** argv, int* nb_mots) {
     *nb_mots = 0;
-    char* mot = strtok(ligne, " ");
+    char* mot = strtok(ligne, " \n");
 
     while (mot != NULL) {
         argv[*nb_mots] = mot;          
         (*nb_mots)++;
-        mot = strtok(NULL, " ");
+        mot = strtok(NULL, " \n");
     }
+}
+void ecrire_log(char* argv, char* type, int code_retour){
+    char* date = "rien pour le moment";
+    FILE* fp = fopen("fichier_log.txt", "a");
+    fprintf(fp, "%s - %s - %s - %d\n", date, argv, type, 0);
+    fclose(fp);
+
+
 }
