@@ -43,7 +43,7 @@ int main(){
             
 
 
-            // Commande interne
+            // Commande externe
         }
 
 
