@@ -20,8 +20,8 @@ void decouper(char* ligne, char** argv, int* nb_mots) {
 }
 void ecrire_log(char* argv, char* type, int code_retour){
     char* date = "rien pour le moment";
-    FILE* fp = fopen("fichier_log.txt", "a");
-    fprintf(fp, "%s - %s - %s - %d\n", date, argv, type, 0);
+    FILE* fp = fopen("log.txt", "a");
+    fprintf(fp, "\n %s - %s - %s - %d\n", date, argv, type, 0);
     fclose(fp);
 
 
